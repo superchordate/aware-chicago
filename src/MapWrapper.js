@@ -55,11 +55,7 @@ function MapWrapper(props) {
           target: mapElement.current,
           layers: [
             new TileLayer({
-              source: new OSM({attributions:[
-                'Built and published by <a href="https://www.linkedin.com/in/brycechamberlain/"  target="_blank">Bryce Chamberlain</a>',
-                '© <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a> contributors.',
-                '<a href="https://data.cityofchicago.org/">Chicago Data Portal:</a> <a href="https://data.cityofchicago.org/Public-Safety/Crimes-One-year-prior-to-present/x2n5-8w5q">Crimes - One Year Prior to Present</a>.'
-              ]}), opacity: 0.65
+              source: new OSM({attributions:[]}), opacity: 0.65
             }),
             featuresLayer_init,
             youAreHereLayer_init
@@ -68,7 +64,8 @@ function MapWrapper(props) {
             //projection: 'EPSG:3857',
             center: fromLonLat(init_lonlat),
             zoom: 16
-          })
+          }),
+          controls:[]
         });   
 
         // save map and vector layer references to state
@@ -84,7 +81,7 @@ function MapWrapper(props) {
         featuresLayer_set(featuresLayer_init)
         youAreHereLayer_set(youAreHereLayer_init)
 
-        introJs().start()
+        //introJs().start()
 
         return () => initialMap.setTarget(null)
 
@@ -117,40 +114,48 @@ function MapWrapper(props) {
               data-title="Welcome to Aware Chicago!" 
               data-intro="This is a public safety map that only shows crime that you might actually experience while walking in the city.<br/><br/>My hope is that it will help you stay safe and informed - but not overly terrified, which is what woud happen if I threw a whole year of crime data at you."
             ></div>
-            <div 
-                className="checkboxes" 
-                data-title="Filters" 
-                data-intro="You can change these to see how messy the full dataset is.<br/><br/>And to see how important data context is. Always keep context in mind when working with data."
-              >
-              <label>
-                <input
-                  type="checkbox"
-                  ref={weekdaytype_checkbox}
-                  defaultChecked={true}
-                  onChange={change_checkbox}
-                />
-                Only {isweekday ? "Weekdays" : "Weekends"}
-              </label>
-              <br/>
-              <label>
-                <input
-                  type="checkbox"
-                  name="last20days"
-                  ref={last20days_checkbox}
-                  defaultChecked={true}
-                  onChange={change_checkbox}
-                />
-                Last 20 Days
-              </label>
+            <div className="controls">
+              <button 
+                  className="button-findme" 
+                  onClick={handleFindMeClick}
+                  data-title="Your Location" 
+                  data-intro="Click this button to recenter the map to your location.<br/><br/>The map only shows crime in Chicago, so if you aren't in Chicago I'd advise against clicking and instead recommend just moving the map around.<br/><br/>If you would like me to add your city's data, just let me know!"
+                >
+                <FontAwesomeIcon icon={faLocationCrosshairs} />
+              </button>
+              <div 
+                  className="checkboxes" 
+                  data-title="Filters" 
+                  data-intro="You can change these to see how messy the full dataset is.<br/><br/>And to see how important data context is. Always keep context in mind when working with data."
+                >
+                <label>
+                  <input
+                    type="checkbox"
+                    ref={weekdaytype_checkbox}
+                    defaultChecked={true}
+                    onChange={change_checkbox}
+                  />
+                  {isweekday ? "Weekdays" : "Weekends"} Only
+                </label>
+                <br/>
+                <label>
+                  <input
+                    type="checkbox"
+                    name="last20days"
+                    ref={last20days_checkbox}
+                    defaultChecked={true}
+                    onChange={change_checkbox}
+                  />
+                  Last 20 Matching Days
+                </label>
+              </div>
             </div>
-            <button 
-                className="button-findme" 
-                onClick={handleFindMeClick}
-                data-title="Your Location" 
-                data-intro="Click this button to recenter the map to your location.<br/><br/>The map only shows crime in Chicago, so if you aren't in Chicago I'd advise against clicking and instead recommend just moving the map around.<br/><br/>If you would like me to add your city's data, just let me know!"
-              >
-              <FontAwesomeIcon icon={faLocationCrosshairs} />
-            </button>
+            <div className="attributions">                
+              Serverless React app by <a href="https://www.linkedin.com/in/brycechamberlain/"  target="_blank">Bryce Chamberlain</a>.
+              Code on <a href="https://github.com/superchordate/aware-chicago/" target="_blank">GitHub</a>
+              <br/><a href="https://data.cityofchicago.org/">Chicago Data Portal:</a> <a href="https://data.cityofchicago.org/Public-Safety/Crimes-One-year-prior-to-present/x2n5-8w5q">Crimes - One Year Prior to Present</a>
+              <br/>© <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a> contributors
+            </div>
         </div>
     )
 

@@ -8,26 +8,41 @@ html, body {
   bottom: 0;
   width: 100%;
 }
-.button-findme {
+.controls{
+  background-color: white; 
   position: absolute;
-  top: 17px;
-  left: 35px; 
+  top: 10px;
+  left: 10px;
+  padding: 10px;
+  box-shadow: 1px 1px 5px grey;
+}
+div.checkboxes{
+  display: inline-block;
+  font-family: 'Roboto Mono', sans-serif; 
+  font-size: 10pt;
+}
+div.checkboxes > label > input { color: red; background-color: red; }
+.button-findme {
+  display: inline-block;
+  vertical-align: top;
   height: 30px;
   width: 30px; 
-  background: var(--ol-background-color);
   border: none; 
   cursor: pointer;
   border: 0.5px solid rgb(102, 102, 102);
+  margin-top: 4px; 
+  margin-right: 5px;
 }
 .button-findme:hover, .button-findme:focus {
     text-decoration: none;
     outline: 1px solid var(--ol-subtle-foreground-color);
     color: var(--ol-foreground-color);
 }
-.checkboxes {
-  position: absolute;
-  top: 60px;
-  left: 10px; 
+div.attributions{
   background-color: white; 
-  padding-right: 3px; 
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 5px; 
+  font-size: 8pt; 
 }
