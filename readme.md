@@ -22,9 +22,9 @@ This is only possible because of these awesome projects and resources:
 
 The entire app is only about 400 lines of custom code. If you'd like to understand how the app works, you can review it easily.
 
-* src/MappWrapper.js: All the UI stuff (React 18) including buttons, intro.js, OpenLayers. 
-* public/index.html: Web page stuff. 
-* cloud-functions/get-crime.js: API call to the Chicago Data Portal and contextual data filtering. 
+* [src/MappWrapper.js](https://github.com/superchordate/aware-chicago/blob/main/src/MapWrapper.js): All the UI stuff (React 18) including buttons, intro.js, OpenLayers. 
+* [public/index.html](https://github.com/superchordate/aware-chicago/blob/main/public/index.html): Web page stuff. 
+* [cloud-functions/get-crime.js](https://github.com/superchordate/aware-chicago/blob/main/cloud-functions/get-crime.js): API call to the Chicago Data Portal and contextual data filtering. 
 
 **Run Locally**
 
