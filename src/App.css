@@ -1,0 +1,33 @@
+html, body {
+  margin: 0;
+  height: 100%;
+}
+.map-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+}
+.button-findme {
+  position: absolute;
+  top: 17px;
+  left: 35px; 
+  height: 30px;
+  width: 30px; 
+  background: var(--ol-background-color);
+  border: none; 
+  cursor: pointer;
+  border: 0.5px solid rgb(102, 102, 102);
+}
+.button-findme:hover, .button-findme:focus {
+    text-decoration: none;
+    outline: 1px solid var(--ol-subtle-foreground-color);
+    color: var(--ol-foreground-color);
+}
+.checkboxes {
+  position: absolute;
+  top: 60px;
+  left: 10px; 
+  background-color: white; 
+  padding-right: 3px; 
+}
