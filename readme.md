@@ -49,7 +49,7 @@ If you would like to contribute, please reach out as well! I'll happily accept I
 
 Good luck and enjoy!
 
-Bryce Chamberlain
-_Independent Technical Contractor_
-superchordate@gmail.com
+Bryce Chamberlain  
+_Independent Technical Contractor_  
+superchordate@gmail.com  
 
