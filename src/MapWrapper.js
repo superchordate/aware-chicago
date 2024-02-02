@@ -113,7 +113,7 @@ function MapWrapper(props) {
               ref={mapElement} 
               className="map-container"  
               data-title="Welcome to Aware Chicago!" 
-              data-intro="This is a public safety map that only shows crime that you might actually experience while walking in the city.<br/><br/>My hope is that it will help you stay safe and informed - but not overly terrified, which is what woud happen if I threw a whole year of crime data at you.<br/></br><span style='color:red'>The app is a bit buggy on mobile but, this will be resolved in a few days.</span>"
+              data-intro="This is a public safety map that only shows crime that you might actually experience while walking in the city.<br/><br/>My hope is that it will help you stay safe and informed - but not overly terrified, which is what woud happen if I threw a whole year of crime data at you."
             ></div>
             <div className="controls">
               <button 
