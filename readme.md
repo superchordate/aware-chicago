@@ -35,7 +35,7 @@ The entire app is only about 400 lines of custom code. If you'd like to understa
 
 The publishing process is really interesting, so I share it here even though I don't expect many people to follow it. Hopefully it'll help you publish your own serverless app!
 
-* Run `npm build` to compile the app into the build/static folder. 
+* Run `npm run build` to compile the app into the build/static folder. 
 * Upload your app files to a Google Cloud Storage bucket (this can also be done at AWS but I prefer GCP).
 * Follow [this guide](https://cloud.google.com/storage/docs/hosting-static-website) to set up your bucket as a website. 
 * Create a [cloud function](https://cloud.google.com/functions/?hl=en), set your API key from https://data.cityofchicago.org/ as a runtime environment variable called `api_key`, and paste in the code from `cloud-functions/get-crime.js`.
