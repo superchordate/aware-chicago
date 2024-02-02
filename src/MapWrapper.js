@@ -278,8 +278,7 @@ function setFeatures(mapdata, featuresLayer){
           geometry: new Point(fromLonLat([idt.longitude, idt.latitude])),
           color: 'rgba(255, 0, 0, 1)',
           text: idt.descr + ': ' + 
-            idt.happened.toLocaleString().replace(/[/][^/]+$/, "") + ' @ ' + 
-            idt.happened.toLocaleString({hour: 'numeric', minute: 'numeric'}).replace(/:00 /, " ")
+            idt.happened.setLocale('en-US').toFormat('ccc M/d @ h:m a')
         });
     };
 
