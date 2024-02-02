@@ -81,7 +81,7 @@ function MapWrapper(props) {
         featuresLayer_set(featuresLayer_init)
         youAreHereLayer_set(youAreHereLayer_init)
 
-        //introJs().start()
+        introJs().start()
 
         return () => initialMap.setTarget(null)
 
