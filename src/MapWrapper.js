@@ -173,7 +173,6 @@ function getData(map, featuresLayer, youAreHereLayer, weekdaytype, last20days){
   if(updateYouAreHere) setYouAreHere(query_lonlat, youAreHereLayer)
 
   const body = {box: box, weekdaytype: weekdaytype, last20days: last20days}
-  console.log(body)
 
   fetch(
     'https://us-central1-aware-chicago-413022.cloudfunctions.net/get-crime', 

@@ -9,13 +9,10 @@ functions.http('getCrime', async(req, res) => {
     res.set('Access-Control-Allow-Origin', '*')
     
     var params = req.body
-    console.log(params)
-    console.log(typeof params)
 
     const app_token = process.env.app_token
 
     if(typeof params === 'string'){ params = JSON.parse(params) }
-    console.log(params)
 
     const time = new Date()
     const hrmin_now = time.getHours() * 60 + time.getMinutes()
