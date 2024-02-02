@@ -18,6 +18,7 @@ import Collection from 'ol/Collection.js'
 import GeoJSON from 'ol/format/GeoJSON.js'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLocationCrosshairs } from '@fortawesome/free-solid-svg-icons'
+import { DateTime } from "luxon"
 
 import {
   Circle as CircleStyle,
@@ -186,7 +187,7 @@ function getData(map, featuresLayer, youAreHereLayer, weekdaytype, last20days){
 
     const relabel = {
         'CONCEALED CARRY LICENSE VIOLATION':'Concealed Carry Violation','CRIM SEXUAL ASSAULT' : 'Sexual Assault','CRIMINAL DAMAGE':'Damage',
-        'MOTOR VEHICLE THEFT' : 'Car Stolen','PUBLIC PEACE VIOLATION' : 'Disture Peace','WEAPONS VIOLATION' : 'Weapon','OTHER NARCOTIC VIOLATION':'Narcotics'
+        'MOTOR VEHICLE THEFT' : 'Car Stolen','PUBLIC PEACE VIOLATION' : 'Disturb Peace','WEAPONS VIOLATION' : 'Weapon','OTHER NARCOTIC VIOLATION':'Narcotics'
     };
 
     // modify data format for easier display.
@@ -207,7 +208,7 @@ function getData(map, featuresLayer, youAreHereLayer, weekdaytype, last20days){
             'case' : row['case_'],
             'descr' : irl,
             'descr2' : row['_secondary_description'],
-            'happened' : new Date(row['date_of_occurrence']),
+            'happened' : new DateTime(row['date_of_occurrence']),
             'latitude' : parseFloat(row['latitude']),
             'longitude' : parseFloat(row['longitude'])
         });
@@ -277,9 +278,8 @@ function setFeatures(mapdata, featuresLayer){
           geometry: new Point(fromLonLat([idt.longitude, idt.latitude])),
           color: 'rgba(255, 0, 0, 1)',
           text: idt.descr + ': ' + 
-            idt.happened.toLocaleDateString('en-EN', {weekday: 'short'}) + ' ' +
-            idt.happened.toLocaleDateString().replace(/[/][^/]+$/, "") + ' @ ' + 
-            idt.happened.toLocaleTimeString({hour: 'numeric', minute: 'numeric'}).replace(/:00 /, " ")
+            idt.happened.toLocaleString().replace(/[/][^/]+$/, "") + ' @ ' + 
+            idt.happened.toLocaleString({hour: 'numeric', minute: 'numeric'}).replace(/:00 /, " ")
         });
     };
 
