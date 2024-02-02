@@ -113,7 +113,7 @@ function MapWrapper(props) {
               ref={mapElement} 
               className="map-container"  
               data-title="Welcome to Aware Chicago!" 
-              data-intro="This is a public safety map that only shows crime that you might actually experience while walking in the city.<br/><br/>My hope is that it will help you stay safe and informed - but not overly terrified, which is what woud happen if I threw a whole year of crime data at you."
+              data-intro="This is a public safety map that only shows crime that you might actually experience while walking in the city.<br/><br/>My hope is that it will help you stay safe and informed - but not overly terrified, which is what woud happen if I threw a whole year of crime data at you.<br/></br><span style='color:red'>The app is a bit buggy on mobile but, this will be resolved in a few days.</span>"
             ></div>
             <div className="controls">
               <button 
@@ -208,7 +208,7 @@ function getData(map, featuresLayer, youAreHereLayer, weekdaytype, last20days){
             'case' : row['case_'],
             'descr' : irl,
             'descr2' : row['_secondary_description'],
-            'happened' : new DateTime(row['date_of_occurrence']),
+            'happened' : DateTime.fromISO(row['date_of_occurrence']),
             'latitude' : parseFloat(row['latitude']),
             'longitude' : parseFloat(row['longitude'])
         });
