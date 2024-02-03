@@ -225,7 +225,7 @@ function getData(map, featuresLayer, youAreHereLayer, weekdaytype, last20days){
             'case' : row['case_'],
             'descr' : irl,
             'descr2' : row['_secondary_description'],
-            'happened' : DateTime.fromISO(row['date_of_occurrence']),
+            'happened' : DateTime.fromISO(row['date_of_occurrence'], {zone: 'America/Chicago'}),
             'latitude' : parseFloat(row['latitude']),
             'longitude' : parseFloat(row['longitude'])
         });
@@ -295,7 +295,7 @@ function setFeatures(mapdata, featuresLayer){
           geometry: new Point(fromLonLat([idt.longitude, idt.latitude])),
           color: 'rgba(255, 0, 0, 1)',
           text: idt.descr + ': ' + 
-            idt.happened.setLocale('en-US').toFormat('ccc M/d @ h:mm a')
+            idt.happened.toFormat('ccc M/d @ h:mm a')
         });
     };
 
