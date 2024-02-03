@@ -24,12 +24,12 @@ The entire app is only about 400 lines of custom code. If you'd like to understa
 
 * [src/MappWrapper.js](https://github.com/superchordate/aware-chicago/blob/main/src/MapWrapper.js): All the UI stuff (React 18) including buttons, intro.js, OpenLayers. 
 * [public/index.html](https://github.com/superchordate/aware-chicago/blob/main/public/index.html): Web page stuff. 
-* [cloud-functions/get-crime.js](https://github.com/superchordate/aware-chicago/blob/main/cloud-functions/get-crime.js): API call to the Chicago Data Portal and contextual data filtering. 
+* [cloud-functions/get-crimes/index.js](https://github.com/superchordate/aware-chicago/blob/main/cloud-functions/get-crimes/index.js): API call to the Chicago Data Portal and contextual data filtering. 
 
 **Run Locally**
 
 * To run locally, install [Node](https://nodejs.org/en/download) and run `npm install` in the project directory. Then run the app with `npm start`. 
-* By default, the app will call my cloud function at ~line 173 of `src/MapWrapper.js` but you can also copy in the code from `cloud-functions/get-crime.js` if you want to change how that part works. You'll need to get an API key from https://data.cityofchicago.org/. 
+* By default, the app will call my cloud function at ~line 173 of `src/MapWrapper.js` but you can also copy in the code from `cloud-functions/get-crimes/index.js` if you want to change how that part works. You'll need to get an API key from https://data.cityofchicago.org/. 
 
 **Publishing**
 
@@ -38,7 +38,7 @@ The publishing process is really interesting, so I share it here even though I d
 * Run `npm run build` to compile the app into the build/static folder. 
 * Upload your app files to a Google Cloud Storage bucket (this can also be done at AWS but I prefer GCP).
 * Follow [this guide](https://cloud.google.com/storage/docs/hosting-static-website) to set up your bucket as a website. 
-* Create a [cloud function](https://cloud.google.com/functions/?hl=en), set your API key from https://data.cityofchicago.org/ as a runtime environment variable called `api_key`, and paste in the code from `cloud-functions/get-crime.js`.
+* Create a [cloud function](https://cloud.google.com/functions/?hl=en), set your API key from https://data.cityofchicago.org/ as a runtime environment variable called `api_key`, and paste in the code from `cloud-functions/get-crimes/index.js`.
 * If you want a custom URL, [the guide](https://cloud.google.com/storage/docs/hosting-static-website) also has steps for that. You'll need to set up a load balancer, SSL certificate, static IP, DNS routing etc. which sounds complicated but GCP actually makes it pretty easy. 
 
 ## Get Involved
