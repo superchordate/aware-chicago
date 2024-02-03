@@ -51,5 +51,5 @@ Good luck and enjoy!
 
 Bryce Chamberlain  
 _Independent Technical Contractor_  
-superchordate@gmail.com  
+bryce@bryce-chamberlain.com
 
