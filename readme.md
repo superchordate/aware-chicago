@@ -1,6 +1,8 @@
+https://www.awarechicago.com
+
 # Aware Chicago
 
-[Aware Chicago](https://www.awarechicago.com) is a public safety map that only shows crime that you might actually experience while walking in the city.
+A public safety map that only shows crime that you might actually experience while walking in the city.
 
 My hope is that it will help you stay safe and informed - but not overly terrified, which is what woud happen if I threw a whole year of crime data at you.
 
