@@ -1,4 +1,4 @@
-https://www.awarechicago.com
+View the live site at: https://www.awarechicago.com
 
 # Aware Chicago
 
