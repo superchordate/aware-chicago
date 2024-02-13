@@ -2,7 +2,7 @@ View the live site at: https://www.awarechicago.com
 
 ## About Me
 
-I'm an independent contractor helping companies build custom cloud apps and leverage data science, visual analytics, and AI. I offer low introductory rates, free consultation and estimates, and no minimums, so contact me today, and let's chat about how I can help!
+I'm an independent contractor helping companies build custom cloud apps and leverage data science, visual analytics, and AI. I offer low introductory rates, free consultation and estimates, and no minimums, so contact me today and let's chat about how I can help!
 
 https://www.bryce-chamberlain.com/
 
